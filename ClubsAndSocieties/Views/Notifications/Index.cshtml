@@ -1,0 +1,58 @@
+﻿@model IEnumerable<ClubsAndSocieties.Models.Notification>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 class="text-center pageHeading">Send Notification</h2>
+
+<p>
+    <a asp-action="Create" id="addClass" class="btn btn-info btn-md">
+        <span class="glyphicon glyphicon-plus"></span> Add
+    </a>
+</p>
+<div style="overflow-x:auto;">
+    <table class="responstable">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Message)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.associatedAdministrator)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Message)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.associatedAdministrator.Name)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-md edit"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-md details"><span class="glyphicon glyphicon-info-sign"></span> Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-info btn-md delete"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

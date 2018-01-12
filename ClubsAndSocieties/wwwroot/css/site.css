@@ -1,35 +1,263 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+/*container for deleted field*/
+.dl-horizontal {
+    margin: 0 auto;
 }
 
+    .dl-horizontal .club {
+        margin: 0 auto;
+        width: 400px;
+    }
+
+body {
+    background-color: white;
+}
 /* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    background-color: darkkhaki;
 }
 
+/*button*/
+#logout {
+    padding: 6px 40px 6px 12px; 
+}
 /* Carousel */
 .carousel-caption p {
     font-size: 20px;
     line-height: 1.4;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"] {
-    width: 100%;
+.navbar-inverse .navbar-toggle {
+    border-color: #418681;
 }
 
-/* QR code generator */
-#qrCode {
-    margin: 15px;
+#clubDelete {
+    margin: 65px auto 65px auto;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-    /* Hide captions */
-    .carousel-caption {
-        display: none;
+.jumbotron h1 a {
+    text-decoration: none;
+    color: white;
+}
+
+.container .jumbotron, .container-fluid .jumbotron {
+    border-radius: 0;
+}
+
+.container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.row {
+    width: 400px;
+    background-color: #fff;
+    margin: 35px auto 35px auto;
+    border-radius: 5px;
+    padding: 25px;
+    border: 1px solid darkslategray;
+}
+
+@media only screen and (min-width:1200px) {
+    .container {
+        width: 1170px;
+        margin: 0 auto;
     }
+}
+/*page heading*/
+.pageHeading {
+    color: white;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-weight: 600;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+}
+
+h2 {
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
+    padding-top: 40px;
+    font-weight: bolder;
+}
+
+/*control buttons*/
+a.btn-default {
+    margin-bottom: 20px;
+}
+
+input.btn.btn-default {
+    margin-bottom: 20px;
+}
+
+a.btn.btn-info.btn-md.edit {
+    background-color: darkcyan;
+    border: 1px solid white;
+}
+
+a.btn.btn-info.btn-md.details {
+    background-color: darkcyan;
+    border: 1px solid white;
+}
+
+a.btn.btn-info.btn-md.delete {
+    background-color: chocolate;
+    border: 1px solid white;
+}
+/*add button*/
+#addClass {
+    background-color: #418681;
+    border-color: #fff;
+    margin-left: 13px;
+    margin-right: 50px;
+}
+
+.jumbotron {
+    background-color: #418681;
+    margin-bottom: 0px;
+}
+
+.navbar-inverse {
+    background-color: darkslategray;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid rgba(50, 50, 50, 0.75);
+    border-top: 1px solid #929394;
+}
+
+@media only screen and (min-width:1200px) {
+    .navbar {
+        width: 1170px;
+        margin: 0 auto;
+    }
+}
+
+/*responsive table -- adds scroll bar */
+.responstable {
+    margin: 0 auto;
+    width: 98%;
+    overflow: hidden;
+    background: #FFF;
+    color: #024457;
+    border-radius: 10px;
+    border: 1px solid #167F92;
+}
+
+table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+}
+
+.responstable th:first-child {
+    display: table-cell;
+}
+
+tr:nth-child(even) {
+    background: #eae8e5;
+}
+
+@media (min-width: 480px) {
+    .responstable th, .responstable td {
+        display: table-cell;
+        padding: 1em;
+    }
+}
+
+@media (min-width: 480px) {
+
+    .responstable {
+        margin-bottom: 40px;
+    }
+
+        .responstable td {
+            border: 1px solid #D9E4E6;
+        }
+}
+
+.responstable th, .responstable td {
+    text-align: left;
+    margin: .5em 1em;
+}
+
+.responstable th {
+    border: 1px solid #FFF;
+    background-color: darkslategray;
+    color: #FFF;
+    padding: 1em;
+    border-radius: 7px;
+}
+
+th {
+    font-weight: bold;
+    text-align: -internal-center;
+}
+
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+
+.responstable th:nth-child(2):after {
+    display: none;
+}
+
+.responstable th:nth-child(2):after {
+    content: attr(data-th);
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffffff;
+}
+
+
+    .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+        -webkit-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.75);
+        box-shadow: 1px 1px 2px 0px rgba(50, 50, 50, 0.75);
+    }
+
+.table {
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+/*------- buttons----------*/
+.createBtn {
+    padding-right: 5%;
+    float: right;
+    margin-top: 7px;
+}
+
+#displayAll {
+    padding-left: 10px;
+}
+
+#searchClubtxtBox {
+    padding-left: 5%;
+}
+/*refresh btn*/
+.btn-info {
+    background-color: darkslategray;
+    border-color: #fff;
+}
+
+footer {
+    background-color: darkslategray;
+    color: #fff;
+    padding: 25px;
+    border-top: 1px solid #929394;
+}
+
+    footer.text-center p {
+        margin: 10px;
+    }
+
+.navbar-inverse .btn-link {
+    color: #fff;
 }

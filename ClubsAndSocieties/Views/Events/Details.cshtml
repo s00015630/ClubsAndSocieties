@@ -1,0 +1,57 @@
+﻿@model ClubsAndSocieties.Models.Event
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2 class="text-center">Event Details</h2>
+<div class="row">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PublicClubEvent)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PublicClubEvent)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AssociatedClub)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AssociatedClub.Chairperson)
+        </dd>
+    </dl>
+</div>
+<div class="text-center">
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-default">Edit</a> |
+    <a asp-action="Index" class="btn btn-default">Back to List</a>
+</div>

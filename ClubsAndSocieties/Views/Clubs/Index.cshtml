@@ -1,0 +1,82 @@
+﻿@model IEnumerable<ClubsAndSocieties.Models.Club>
+@{
+    ViewData["Title"] = "Index";
+}
+<h2 class="text-center pageHeading">Current Clubs and Societies</h2>
+
+<form asp-action="Index" method="get">
+    <div class="form-actions no-color">
+        <p>
+            <a asp-action="Create" id="addClass" class="btn btn-info btn-md">
+                <span class="glyphicon glyphicon-plus"></span> Add
+            </a>
+            <input type="text" placeholder=" Find by name:" name="SearchString" value="@ViewData["currentFilter"]" />
+            <input type="submit" value="Search" class="btn btn-group-sm" />
+
+            <a asp-action="Index" class="btn btn-info btn-md">
+                <span class="glyphicon glyphicon-refresh"></span> Full List
+            </a>
+        </p>
+    </div>
+</form>
+<div style="overflow-x:auto;">
+    <table class="responstable">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Chairperson)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Secretary)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Treasurer)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Chairperson)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Secretary)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Treasurer)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info btn-md edit"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-md details"><span class="glyphicon glyphicon-info-sign"></span> Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-info btn-md delete"><span class="glyphicon glyphicon-trash"></span> Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

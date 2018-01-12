@@ -1,0 +1,78 @@
+﻿@model ClubsAndSocieties.Models.Club
+@using Microsoft.AspNetCore.Mvc.ViewFeatures
+@{
+    ViewData["Title"] = "Edit";
+}
+<h2 class="text-center">Edit Club</h2>
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="AdministratorID" class="control-label"></label>
+                <select asp-for="AdministratorID" class="form-control" asp-items="ViewBag.AdministratorID"></select>
+                <span asp-validation-for="AdministratorID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Chairperson" class="control-label"></label>
+                <input asp-for="Chairperson" class="form-control" />
+                <span asp-validation-for="Chairperson" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Secretary" class="control-label"></label>
+                <input asp-for="Secretary" class="form-control" />
+                <span asp-validation-for="Secretary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treasurer" class="control-label"></label>
+                <input asp-for="Treasurer" class="form-control" />
+                <span asp-validation-for="Treasurer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone" class="control-label"></label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@*@await Html.PartialAsync("_Create")
+    @Html.Partial("_Create")
+    @{
+        Html.RenderPartial("_Create");
+    }*@
+
+
+@* RenderPartialAsync *@
+@*@{
+        await Html.RenderPartialAsync("_Create");
+    }*@
+<div class="text-center">
+    <a asp-action="Index" class="btn btn-default">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

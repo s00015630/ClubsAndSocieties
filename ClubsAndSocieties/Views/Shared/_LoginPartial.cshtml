@@ -6,13 +6,21 @@
 
 @if (SignInManager.IsSignedIn(User))
 {
+    <ul class="nav navbar-nav">
+        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+        <li><a asp-area="" asp-controller="Clubs" asp-action="Index">Clubs And Societies</a></li>
+        <li><a asp-area="" asp-controller="Events" asp-action="Index">Events For Review</a></li>
+        <li><a asp-area="" asp-controller="Posts" asp-action="Index">Club Posts</a></li>
+        <li><a asp-area="" asp-controller="Notifications" asp-action="Index">Send Notification</a></li>
+    </ul>
+
     <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
         <ul class="nav navbar-nav navbar-right">
             <li>
                 <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
             </li>
             <li>
-                <button type="submit" class="btn btn-link navbar-btn navbar-link">Log out</button>
+                <button type="submit" id="logout" class="btn btn-link navbar-btn navbar-link">Log out</button>
             </li>
         </ul>
     </form>

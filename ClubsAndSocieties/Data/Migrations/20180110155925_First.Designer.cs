@@ -11,9 +11,10 @@ using System;
 namespace ClubsAndSocieties.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180110155925_First")]
+    partial class First
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -128,7 +129,7 @@ namespace ClubsAndSocieties.Data.Migrations
 
                     b.HasIndex("AdministratorID");
 
-                    b.ToTable("Clubs");
+                    b.ToTable("Club");
                 });
 
             modelBuilder.Entity("ClubsAndSocieties.Models.Event", b =>
@@ -159,7 +160,7 @@ namespace ClubsAndSocieties.Data.Migrations
 
                     b.HasIndex("ClubID");
 
-                    b.ToTable("Events");
+                    b.ToTable("Event");
                 });
 
             modelBuilder.Entity("ClubsAndSocieties.Models.Member", b =>
@@ -179,7 +180,7 @@ namespace ClubsAndSocieties.Data.Migrations
 
                     b.HasIndex("StudentID");
 
-                    b.ToTable("Members");
+                    b.ToTable("Member");
                 });
 
             modelBuilder.Entity("ClubsAndSocieties.Models.Notification", b =>
@@ -202,7 +203,7 @@ namespace ClubsAndSocieties.Data.Migrations
 
                     b.HasIndex("AdminID");
 
-                    b.ToTable("Notifications");
+                    b.ToTable("Notification");
                 });
 
             modelBuilder.Entity("ClubsAndSocieties.Models.Post", b =>
@@ -229,7 +230,7 @@ namespace ClubsAndSocieties.Data.Migrations
 
                     b.HasIndex("StudentID");
 
-                    b.ToTable("Posts");
+                    b.ToTable("Post");
                 });
 
             modelBuilder.Entity("ClubsAndSocieties.Models.Student", b =>
@@ -251,7 +252,7 @@ namespace ClubsAndSocieties.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Students");
+                    b.ToTable("Student");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
